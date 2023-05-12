@@ -5,6 +5,10 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: src/api
   NODE_VERSION: '18.x'
