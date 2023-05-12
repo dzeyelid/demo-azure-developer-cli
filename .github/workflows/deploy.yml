@@ -21,13 +21,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
       - name: Install dependencies and build
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           npm ci
           npm run build --if-present
-          popd
+        working-directory: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
       - name: Login to Azure
         uses: azure/login@v1
