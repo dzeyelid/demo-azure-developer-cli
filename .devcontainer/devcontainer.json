@@ -1,0 +1,25 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "github.vscode-github-actions",
+        "ms-azuretools.azure-dev",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.azure-account"
+      ]
+    }
+  },
+  "onCreateCommand": "curl -fsSL https://aka.ms/install-azd.sh | bash",
+  "postStartCommand": "npm install -g typescript"
+}
