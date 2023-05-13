@@ -153,3 +153,11 @@ services:                       # サービス一覧
 ### モニタリングに関する対応
 
 利用者が`azd monitor --overview`でダッシュボードを開けるようにするには、ダッシュボード`Microsoft.Portal/dashboards`のリソースが必要です。
+
+## 所感
+
+- Azureリソースをデプロイするには、`az deployment`コマンドだったり、`terraform`コマンドだったりと開発では使わない操作が必要で手間や学習コストがかかるが、`azd`コマンドで一貫して扱える。
+- Azureリソースの構成とアプリケーション コードの関連付けは、現状、環境変数やシェルスクリプトを利用してなんとかしているが、これを`azd`の構成に落とし込んで統合して管理できそう。
+- Azureリソースとアプリケーション コードの管理を`azure.yaml`とディレクトリ構成で統一でき、プロジェクト全体の見通しがよくなる。
+- デモやハンズオン、学習用の環境を作って利用してもらうのにすごく便利そう！🧑🏻‍🎓
+- [GitHub Codespaces](https://github.com/features/codespaces)/[Dev container](https://code.visualstudio.com/docs/devcontainers/containers)による環境構築と相性抜群！🚀
